@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AQMS Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <div class="nav-title">AQMS Dashboard</div>
+    <img src="asset/logo.png" alt="Logo" class="nav-logo" />
+  </div>
+
+  <div class="dashboard">
+    <div class="header">Monitoring System</div>
+
+<audio id="alarmSound" src="asset/alarm.mp3" preload="auto"></audio>
+
+<div id="warningBanner" style="display: none; background-color: red; color: white; padding: 10px; text-align: center; font-weight: bold; font-size: 18px; border-radius: 5px;">
+  ⚠️ Warning: Dangerous Air Quality Detected!
+</div>
+
+
+    <div class="progress-bars">
+      <div class="progress-item">
+        <div class="progress-wrapper">
+          <svg class="progress-circle" width="120" height="120">
+            <circle cx="60" cy="60" r="50" stroke="#444" stroke-width="10" fill="none" />
+            <circle id="pm25Circle" cx="60" cy="60" r="50" stroke="#2ecc71" stroke-width="10" fill="none" />
+          </svg>
+          <div class="progress-text" id="pm25Text">0 µg/m³</div>
+        </div>
+        <p>Dust Sensor</p>
+      </div>
+      
+      <div class="progress-item">
+        <div class="progress-wrapper">
+          <svg class="progress-circle" width="120" height="120">
+            <circle cx="60" cy="60" r="50" stroke="#444" stroke-width="10" fill="none" />
+            <circle id="mq135Circle" cx="60" cy="60" r="50" stroke="#2ecc71" stroke-width="10" fill="none" />
+          </svg>
+          <div class="progress-text" id="mq135Text">0 ppm</div>
+        </div>
+        <p>Hazardous Gas</p>
+      </div>
+    </div>
+
+    <div class="progress-bars">
+      <div class="progress-item">
+        <div class="progress-wrapper">
+          <svg class="progress-circle" width="120" height="120">
+            <circle cx="60" cy="60" r="50" stroke="#444" stroke-width="10" fill="none" />
+            <circle id="tempCircle" cx="60" cy="60" r="50" stroke="#2ecc71" stroke-width="10" fill="none" />
+          </svg>
+          <div id="tempText" class="progress-text">--°C</div>
+        </div>
+        <div>Temperature</div>
+      </div>
+
+      <div class="progress-item">
+        <div class="progress-wrapper">
+          <svg class="progress-circle" width="120" height="120">
+            <circle cx="60" cy="60" r="50" stroke="#444" stroke-width="10" fill="none" />
+            <circle id="humidityCircle" cx="60" cy="60" r="50" stroke="#2ecc71" stroke-width="10" fill="none" />
+          </svg>
+          <div id="humidityText" class="progress-text">--%</div>
+        </div>
+        <div>Humidity</div>
+      </div>
+    </div>
+
+  <div class="chart-section">
+    <div class="chart-title">Air Quality Records</div>
+    <div class="chart-scroll-wrapper">
+      <canvas id="pmChart" width="1000" height="400"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

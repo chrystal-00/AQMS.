@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AQMS - Air Quality Monitoring System</title>
+  <style>
+    body {
+      background-color: #dffcff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      margin-top: 100px;
+    }
+
+    .logo {
+      width: 400px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 20px 0;
+      color: #222;
+    }
+
+    .open-btn {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 18px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .open-btn:hover {
+      background-color: #333;
+    }
+
+    .loader-container {
+      display: none;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #dffcff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+    }
+
+    .loader {
+      border: 8px solid #f3f3f3;
+      border-top: 8px solid #0077cc;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" id="main-content">
+    <img src="asset/logo.png" alt="AQMS Logo" class="logo" />
+    <h1>Air Quality Monitoring System</h1>
+    <button class="open-btn" onclick="showLoader()">Open</button>
+  </div>
+
+  <div class="loader-container" id="loader">
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    function showLoader() {
+      document.getElementById("main-content").style.display = "none";
+      document.getElementById("loader").style.display = "flex";
+      setTimeout(() => {
+        window.location.href = "monitoring.html";
+      }, 5000);
+    }
+  </script>
+</body>
+</html>

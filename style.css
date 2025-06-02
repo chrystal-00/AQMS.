@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #afecff;
+  color: #fff;
+}
+
+.navbar {
+  background-color: #003163;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-title {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.nav-logo {
+  height: 40px;
+  width: auto;
+  margin-left: auto;
+}
+
+.dashboard {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  color: #002333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.progress-bars {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.progress-item {
+  text-align: center;
+  margin: 15px;
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  color: #fff;
+}
+
+.progress-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+
+.progress-circle {
+  transform: rotate(-90deg);
+}
+
+.progress-circle circle:nth-child(2) {
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 0.8s ease, stroke 0.4s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.chart-section {
+  margin-top: 30px;
+}
+
+.chart-title {
+  text-align: center;
+  font-weight: bold;
+  color: #003163;
+  margin-bottom: 10px;
+}
+
+.chart-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #222;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.chart-scroll-wrapper canvas {
+  min-width: 600px;
+  height: 400px !important;
+  display: block;
+}
+.progress-circle circle {
+  stroke-dasharray: 314;
+  stroke-dashoffset: 314;
+  transition: stroke-dashoffset 0.5s ease, stroke 0.5s ease;
+}
